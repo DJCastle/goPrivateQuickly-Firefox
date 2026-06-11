@@ -6,7 +6,7 @@
 > Chromium build (Chrome, Brave, Edge, Arc, Opera, Vivaldi):
 > [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.5-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Manifest](https://img.shields.io/badge/manifest-v3-orange)
 ![Privacy](https://img.shields.io/badge/data%20collection-zero-brightgreen)
@@ -110,7 +110,7 @@ Chromium browsers (Chrome, Brave, Edge, Arc, Opera, Vivaldi — 109+) ship from
 the [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium)
 repo.
 
-Tested on macOS as of 1.0.0. Should work on Windows and Linux equally
+Tested on macOS as of 1.1.5. Should work on Windows and Linux equally
 — the extension uses only standard, cross-platform `chrome.*` APIs.
 If you find an OS-specific bug, please email support.
 
