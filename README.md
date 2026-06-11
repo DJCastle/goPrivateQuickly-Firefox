@@ -54,7 +54,7 @@ those.
 
 ## Install
 
-- **Firefox**: install from Firefox Add-ons. _(Listing pending v1.0.)_
+- **Firefox**: install from Firefox Add-ons. _(Listing pending review.)_
 
 Using a Chromium browser (Chrome, Brave, Edge, Arc, Opera, Vivaldi)? It's a
 separate package —
