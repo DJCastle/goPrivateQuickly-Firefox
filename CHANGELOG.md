@@ -28,16 +28,9 @@ First public release.
     updates, download scanning) are never touched.
   - On Firefox, where these settings cannot be confined to a private session,
     each protection is reported as "Unavailable" rather than changed.
-- **Status panel** after a hardened launch shows, per setting: Applied,
-  Already protected by browser, Unavailable, Not controllable (policy or
-  another extension), or Failed — with text and icons, not color alone.
 - **Advanced settings** (off by default, each with a warning): strict WebRTC
   routing (`proxy_only`), disable WebRTC entirely, and disable referrer
-  headers.
-- **Optional VPN reminder** before opening a hardened window — a local
-  dialog only; the extension never inspects, verifies, or controls any VPN.
-- **Startup options** — optionally open a private window when the browser
-  starts, or be asked first with a configurable 3-, 5-, or 7-second countdown.
+  headers. On Firefox these report as "Unavailable" (no private-session scope).
 - **First-run onboarding** that walks through enabling the extension in
   private/incognito windows.
 - Light and dark theme support; keyboard navigation and screen-reader labels.

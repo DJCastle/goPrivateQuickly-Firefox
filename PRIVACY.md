@@ -16,10 +16,9 @@ done. Thanks for caring about privacy.
 
 I built Go Private Quickly because I wanted a single-click way to open
 a new private/incognito window. That is the entire purpose of the
-extension. To do that, GPQ needs exactly one thing from your browser:
-the ability to remember whether you want a private window to open
-automatically when the browser starts, or whether you'd rather be
-asked first.
+extension. The only thing GPQ needs to remember between sessions is your
+own on/off preferences for the three optional Hardened Mode advanced
+toggles — nothing about what you browse.
 
 That preference is stored using `chrome.storage.sync` (with a fallback
 to `chrome.storage.local` if your browser sync is unavailable). It
@@ -36,17 +35,13 @@ A handful of small settings, totalling well under one kilobyte:
 
 | Setting | Values | Default |
 | --- | --- | --- |
-| `startupMode` | `off` / `auto-open` / `ask-me` | `off` |
-| `askCountdownSeconds` | `3` / `5` / `7` | `5` |
-| `askCountdownDefault` | `cancel` / `open` | `cancel` |
-| `vpnReminder` | `true` / `false` | `false` |
 | `advStrictWebrtc` | `true` / `false` | `false` |
 | `advDisableWebrtc` | `true` / `false` | `false` |
 | `advDisableReferrers` | `true` / `false` | `false` |
 
-The last four were added with **Hardened Private Mode**. They record only
-your own on/off preferences for the optional VPN reminder and the advanced
-privacy toggles. They never describe anything you browse.
+These three are the **Hardened Private Mode** advanced toggles. They record
+only your own on/off preferences for the advanced privacy options. They never
+describe anything you browse.
 
 If you've signed into your browser's sync (Chrome sync, Firefox Sync,
 etc.) these settings travel with you between your own devices. That
@@ -89,8 +84,9 @@ On **Chromium browsers** (Chrome, Edge, Brave, Vivaldi, etc.), two:
   scope, so they affect the private session alone and the browser clears
   them automatically when the last private window closes. GPQ never
   changes your normal-browsing privacy settings. The `privacy` permission
-  is what lets the browser show you, per setting, whether each protection
-  was applied, already on, unavailable, blocked by policy, or failed.
+  also lets GPQ read each setting's level of control, so it can tell whether
+  a protection was applied, already on, unavailable, or blocked by policy or
+  another extension — instead of silently failing.
   Firefox does not offer a private-session scope for these settings, so
   GPQ does not request `privacy` there and reports each protection as
   unavailable rather than changing your global configuration.

@@ -27,10 +27,10 @@ window still opens — it simply can't add session-scoped protections on Firefox
 
 ## Reviewer note — why `storage` is required
 
-- **`storage`** — The only data stored is the user's own preferences (startup
-  behavior, ask-me countdown, VPN reminder on/off, and three advanced toggles).
-  Total size is well under 1 KB. No browsing history, URLs, queries, page
-  content, cookies, or identifiers are ever stored. Nothing is transmitted.
+- **`storage`** — The only data stored is the user's own preferences (the three
+  advanced Hardened Mode toggles). Total size is well under 1 KB. No browsing
+  history, URLs, queries, page content, cookies, or identifiers are ever stored.
+  Nothing is transmitted.
 
 ## What Hardened Private Mode never touches
 

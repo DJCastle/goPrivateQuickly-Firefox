@@ -22,18 +22,11 @@ allows it, tightens supported privacy settings for that private session
 only. On Firefox these settings have **no private-session scope** —
 they can only be changed globally, which would alter your normal
 browsing — so GPQ deliberately leaves them alone and reports each one as
-"Unavailable" in the status panel rather than changing it. The private
-window still opens; your normal browsing settings and security
-protections are never touched. (The Chromium build does apply these
-session-scoped protections — see the link above.) Optional advanced
-toggles and a local VPN reminder are off by default.
-
-You can also tell it to:
-
-- **Open a private window automatically** the moment your browser starts.
-- **Ask you on startup** whether to open one — with a configurable
-  3-, 5-, or 7-second countdown and a default action if you don't
-  answer in time.
+"Unavailable" rather than changing it. The private window still opens;
+your normal browsing settings and security protections are never
+touched. (The Chromium build does apply these session-scoped
+protections — see the link above.) Optional advanced toggles
+(strict/disabled WebRTC, no referrer headers) are off by default.
 
 The toolbar icon also reflects whether the currently focused window is
 private — a muted silver mask when you're in a normal window, a vivid
@@ -98,18 +91,14 @@ installed software. Full justification lives in
 
 | Setting | What it does | Default |
 | --- | --- | --- |
-| Open a private window when the browser starts | Auto-opens one new private window on browser launch | Off |
-| Ask me on startup | Pops up a Yes/No prompt with a countdown | Off |
-| Ask-me countdown duration | 3, 5, or 7 seconds before the popup auto-closes | 5 |
-| Ask-me default action | Cancel (do nothing) or Open private window on timeout | Cancel |
-| VPN reminder | Show a local reminder before opening Hardened Private Mode | Off |
 | Advanced: strict WebRTC routing (`proxy_only`) | Stricter WebRTC; may break calls/meetings | Off |
 | Advanced: disable WebRTC entirely | Where supported; may break real-time communication | Off |
 | Advanced: disable referrer headers | Where supported; may break some sites/sign-in/payment | Off |
 
-The two startup settings are mutually exclusive — turning one on
-turns the other off. The advanced toggles and VPN reminder are all off
-by default.
+All three advanced toggles are off by default; each is labeled with its
+trade-off. On Firefox these settings report as "Unavailable" when a
+hardened window opens (no private-session scope), so the toggles take
+effect only on the Chromium build.
 
 ## Browser support
 

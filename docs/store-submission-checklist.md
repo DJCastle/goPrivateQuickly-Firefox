@@ -31,8 +31,8 @@ repo. Run the [testing checklist](testing-checklist.md) first.
       Firefox" because Firefox has no private-session scope for privacy
       settings; the extension deliberately does not change global Firefox
       settings.
-- [ ] Screenshots updated to show the popup, the hardened status panel, and the
-      advanced/VPN settings.
+- [ ] Screenshots updated to show the popup, a private window, and the
+      advanced settings.
 - [ ] Upload `dist/firefox.zip`.
 
 ## Post-submission
