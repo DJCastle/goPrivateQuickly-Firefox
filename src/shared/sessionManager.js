@@ -28,7 +28,7 @@ export async function openHardenedSession(hardenedSet) {
     const win = await chrome.windows.create({ incognito: true, focused: false });
     windowId = win.id;
   } catch {
-    return { ok: false, reason: "window-failed", windowId: null, allowed: false, results: [] };
+    return { ok: false, reason: "window-failed", windowId: null, allowed: false };
   }
 
   let allowed = false;
@@ -40,27 +40,21 @@ export async function openHardenedSession(hardenedSet) {
   if (!allowed) {
     // The window opened, but the extension can't run in / control private
     // mode until the user enables it. Skip applying so we never half-apply.
-    return { ok: true, windowId, allowed: false, results: [] };
+    return { ok: true, windowId, allowed: false };
   }
 
-  const adapter = firefoxAdapter;
-  const results = [];
+  // Walk the protection list through the adapter. On Firefox every entry
+  // reports "unavailable" (no private-session scope), but we still iterate so
+  // the flow matches Chromium and stays correct if the adapter ever changes.
   for (const entry of hardenedSet) {
-    let outcome;
     try {
-      outcome = await adapter.applyOne(entry);
+      await firefoxAdapter.applyOne(entry);
     } catch {
-      outcome = { status: "failed" };
+      // Ignore — continue with the next setting.
     }
-    results.push({
-      id: entry.id,
-      label: entry.label,
-      advanced: Boolean(entry.advanced),
-      status: outcome.status,
-    });
   }
 
-  return { ok: true, windowId, allowed: true, results };
+  return { ok: true, windowId, allowed: true };
 }
 
 export async function focusWindow(windowId) {
