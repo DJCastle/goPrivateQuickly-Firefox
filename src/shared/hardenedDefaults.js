@@ -54,9 +54,9 @@ export function buildHardenedSet(prefs) {
   ];
 
   if (prefs.advDisableWebrtc) {
-    // Firefox: privacy.network.peerConnectionEnabled. Chromium has no
-    // supported API to disable WebRTC entirely, so the path probe naturally
-    // reports it as unavailable there.
+    // Maps to Firefox's privacy.network.peerConnectionEnabled, but the Firefox
+    // adapter is inert (no private-session scope), so this entry is reported
+    // "unavailable" like every other protection.
     entries.push({
       ...boolOff("disableWebrtc", "WebRTC disabled entirely", ["network", "peerConnectionEnabled"]),
       advanced: true,

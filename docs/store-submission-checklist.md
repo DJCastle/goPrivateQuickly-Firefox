@@ -27,12 +27,11 @@ repo. Run the [testing checklist](testing-checklist.md) first.
 - [ ] Source code provided / repository linked (no minification or bundling —
       vanilla JS ships as-is, so review is straightforward). See
       [build-instructions.md](build-instructions.md).
-- [ ] Listing note: Hardened Private Mode protections report "Unavailable on
-      Firefox" because Firefox has no private-session scope for privacy
-      settings; the extension deliberately does not change global Firefox
-      settings.
-- [ ] Screenshots updated to show the popup, a private window, and the
-      advanced settings.
+- [ ] Listing note: this Firefox build offers no Hardened Private Mode (Firefox
+      has no private-session scope for privacy settings); it only opens private
+      windows and never changes global Firefox settings.
+- [ ] Screenshots updated to show a one-click private window and the onboarding
+      page (this build has no popup and no settings page).
 - [ ] Upload `dist/firefox.zip`.
 
 ## Post-submission

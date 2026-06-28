@@ -26,21 +26,21 @@ _AMO summary is shown in search results. Max 250 chars._
 
 ## Tags
 
-> private window, incognito, private browsing, privacy, productivity, one click, hardened, no tracking
+> private window, incognito, private browsing, privacy, productivity, one click, no tracking
 
 ## Description
 
 Plain text — reads human and pastes cleanly into AMO (it auto-links the URLs).
 
 ```
-Go Private Quickly does one small thing and tries to do it well: it puts a button in your toolbar that opens a new private window. Click the icon, click the button, you're private. That's the whole idea.
+Go Private Quickly does one small thing and tries to do it well: it puts a button in your toolbar that opens a new private window. Click the icon, you're private. That's the whole idea.
 
 I built it because I open private windows all day and wanted it to be one click instead of a trip through a menu — and because I wanted something that stayed out of the way and didn't quietly phone home. This one never connects to the internet at all.
 
 WHAT YOU GET
 - One click to a new private window, straight from the toolbar.
 - A toolbar icon that quietly shows whether the window you're in is private.
-- An optional "Hardened" mode that tightens extra privacy settings for the private session. A note for Firefox specifically: Firefox doesn't let an extension confine these settings to a single private session, so on Firefox GPQ reports them as "Unavailable" and leaves your normal settings completely untouched rather than changing them globally. The extra hardening currently applies on Chromium browsers — but the one-click private window works fully on Firefox either way.
+- Heads up on "Hardened" mode (Chromium only): some browsers let an extension tighten extra privacy settings for just the private session. Firefox doesn't allow that — it has no way to confine those settings to a single private session — so this Firefox build leaves them out entirely rather than changing your normal browsing globally. The session-scoped hardening is available in the Chrome/Brave/Edge build.
 
 WHAT IT HONESTLY DOES NOT DO (I'd rather set expectations than oversell)
 - It's not a VPN. Your network, ISP, employer, or school can still see the sites you visit.
@@ -53,7 +53,7 @@ PRIVACY, FOR REAL
 - No data collection. None.
 - No analytics, no telemetry, no error reporting.
 - Zero network requests — the extension never connects to the internet, period.
-- The only permission it requests on Firefox is "storage," used to remember your own settings.
+- The only permission it requests on Firefox is "storage," used only to remember that you've seen the one-time welcome page. There are no settings to store.
 - No third-party code, no CDNs, no remote scripts. It's open source, so you can read every line.
 
 ONE-TIME SETUP
@@ -87,11 +87,12 @@ Questions or problems: support@codecraftedapps.com
 
 ## Screenshots (up to 10; AMO recommends at least 4)
 
-Three Firefox captures are prepared in this folder (`firefox-1.png`,
-`firefox-2.png`, `firefox-3.png`): the popup over about:addons (showing
-the Preferences/Hardened Mode panel), the popup over a new Private
-window, and the popup over the CodeCraftedApps site. AMO accepts their
-native size as-is and displays them scaled — no resizing needed.
+Screenshots must be recaptured for this build — the existing `firefox-1.png`,
+`firefox-2.png`, and `firefox-3.png` show the popup and Hardened Mode panel,
+which no longer exist. Suggested captures: the GPQ toolbar icon with a freshly
+opened private window, the onboarding/welcome page, and the toolbar icon's
+private-vs-normal state. AMO accepts native size as-is and displays it scaled —
+no resizing needed.
 
 ## Notes for AMO reviewers (paste into "Notes to reviewer" field)
 
@@ -101,18 +102,17 @@ new private/incognito window.
 
 PERMISSIONS
 
-- "storage" — used solely to persist the user's own settings
-  (the three advanced Hardened Mode privacy toggles). No personal
-  data is stored.
+- "storage" — used solely to persist a single onboardingShown flag so
+  the one-time welcome page doesn't re-open. No settings and no personal
+  data are stored.
 - "incognito": "spanning" — required so the same extension instance
   serves both normal and private windows.
 
-This Firefox build does NOT request the "privacy" permission. Firefox's
-BrowserSetting API has no private-session scope, so Hardened Private
-Mode reports every protection as "Unavailable" rather than mutating
-global settings; it never changes the user's normal browsing
-configuration. (The Chromium build requests "privacy" and applies these
-settings with the incognito-session-only scope.)
+This Firefox build does NOT request the "privacy" permission and offers no
+Hardened Private Mode. Firefox's BrowserSetting API has no private-session
+scope, so the extension never mutates global privacy settings — it only opens
+private windows. (The Chromium build requests "privacy" and applies
+session-scoped hardening with the incognito-session-only scope.)
 
 No host permissions, no content scripts, no tabs permission, no
 activeTab. The extension does not read, modify, or inject anything
@@ -124,13 +124,12 @@ The extension makes ZERO network requests. There is no `fetch`,
 `XMLHttpRequest`, WebSocket, EventSource, image beacon, external
 font, CDN, or third-party SDK in the package. You can verify this in
 the source files under src/ — the .js files are short, vanilla, and
-self-contained (background, popup, options, onboarding, plus the
-src/shared/ modules used by the popup and options).
+self-contained (background and onboarding, plus the src/shared/ modules
+covered by the unit tests).
 
 OUTBOUND LINKS
 
-The options and onboarding pages contain a small "Help & support"
-section with two outbound links:
+The onboarding page footer contains two outbound links:
 - https://codecraftedapps.com/extensions (homepage)
 - mailto:support@codecraftedapps.com (support email)
 
@@ -139,10 +138,10 @@ Both only activate when the user clicks them.
 SOURCE
 
 The unminified source matches the submitted package and is publicly
-available at https://github.com/DJCastle/goPrivateQuickly-Firefox in
-privacy/go-private-quickly/. The build pipeline is a zero-dependency
-Node script (build.mjs) that performs a manifest merge and a file
-copy from src/ to dist/firefox/.
+available at https://github.com/DJCastle/goPrivateQuickly-Firefox
+(extension files at the repo root). The build pipeline is a
+zero-dependency Node script (build.mjs) that drops manifest.json at the
+package root and copies src/ to dist/firefox/.
 
 If you have questions, please contact
 support@codecraftedapps.com.

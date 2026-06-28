@@ -1,6 +1,6 @@
 # Privacy Policy — Go Private Quickly (GPQ)
 
-**Last updated:** May 30, 2026
+**Last updated:** June 28, 2026
 
 ## The short version
 
@@ -15,15 +15,13 @@ done. Thanks for caring about privacy.
 ## The slightly longer version
 
 I built Go Private Quickly because I wanted a single-click way to open
-a new private/incognito window. That is the entire purpose of the
-extension. The only thing GPQ needs to remember between sessions is your
-own on/off preferences for the three optional Hardened Mode advanced
-toggles — nothing about what you browse.
+a new private window. That is the entire purpose of the extension. On
+Firefox there are no settings to configure, so the only thing GPQ stores
+is a single flag noting that you've already seen the one-time welcome
+page — nothing about what you browse.
 
-That preference is stored using `chrome.storage.sync` (with a fallback
-to `chrome.storage.local` if your browser sync is unavailable). It
-never leaves your device, never leaves your browser, and never reaches
-me or anyone else.
+That flag is stored in `chrome.storage.local`. It never leaves your
+device, never leaves your browser, and never reaches me or anyone else.
 
 ## What we collect
 
@@ -31,27 +29,15 @@ Nothing.
 
 ## What we store on your device
 
-A handful of small settings, totalling well under one kilobyte:
+Exactly one tiny value, well under one kilobyte:
 
-| Setting | Values | Default |
+| Key | Values | Purpose |
 | --- | --- | --- |
-| `advStrictWebrtc` | `true` / `false` | `false` |
-| `advDisableWebrtc` | `true` / `false` | `false` |
-| `advDisableReferrers` | `true` / `false` | `false` |
+| `onboardingShown` | `true` / `false` | Remembers that the one-time welcome page has been shown, so it doesn't re-open. |
 
-These three are the **Hardened Private Mode** advanced toggles. They record
-only your own on/off preferences for the advanced privacy options. They never
-describe anything you browse.
-
-If you've signed into your browser's sync (Chrome sync, Firefox Sync,
-etc.) these settings travel with you between your own devices. That
-sync happens through your browser vendor's infrastructure (Google,
-Mozilla, etc.), under their privacy policies, not mine. GPQ doesn't
-operate or have access to those servers.
-
-There's also one tiny key in `chrome.storage.local` called
-`onboardingShown`, which is just a flag so the welcome page doesn't
-re-open every time you reload the extension during development.
+It lives in `chrome.storage.local`, never leaves your browser, and says
+nothing about what you browse. The Firefox build has no settings page and
+stores no other preferences.
 
 ## What we transmit
 
@@ -66,10 +52,10 @@ the `storage` permission and no host permissions at all — your
 browser itself won't let it read or transmit page data even if it
 wanted to.
 
-The only "external" links you'll see are in the options page and
-onboarding page footers — links to this website and a `mailto:` link
-to the support email. Those links only do anything when *you* click
-them. Until then, no requests are made.
+The only "external" links you'll see are in the onboarding page footer —
+links to this website and a `mailto:` link to the support email. Those
+links only do anything when *you* click them. Until then, no requests
+are made.
 
 ## What permissions GPQ requests, and why
 

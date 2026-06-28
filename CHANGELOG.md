@@ -5,6 +5,26 @@ All notable changes to this extension are documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Version scheme: [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-06-28
+
+### Changed
+
+- **One click opens a private window directly.** The toolbar icon no longer
+  opens a popup — clicking it opens a new private window immediately. If the
+  extension isn't yet allowed in private windows, the click opens the welcome
+  page instead of doing nothing.
+
+### Removed
+
+- **Hardened Private Mode and the settings page are gone on Firefox.** Firefox's
+  `BrowserSetting` API has no private-session scope, so hardening could never be
+  confined to a single private session — the old popup presented it as working
+  while actually applying nothing. The Firefox build now omits it entirely and
+  never touches your normal browsing settings. Session-scoped hardening remains
+  in the [Chromium build](https://github.com/DJCastle/goPrivateQuickly-Chromium).
+- The build now stores only a one-time onboarding flag; the three advanced
+  hardening preferences no longer exist here.
+
 ## [1.1.5] — 2026-06-11
 
 ### Changed

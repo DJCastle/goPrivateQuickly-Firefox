@@ -10,16 +10,16 @@ This repository ships the **Firefox** build.
 
 | Permission | Required for | Notes |
 | --- | --- | --- |
-| `storage` | Saving the user's own settings | `chrome.storage.sync` with `chrome.storage.local` fallback. No browsing data. |
+| `storage` | Remembering the welcome page was shown | A single `onboardingShown` flag in `chrome.storage.local`. No settings, no browsing data. |
 
 No host permissions. No `tabs`, `activeTab`, `cookies`, `downloads`,
 `bookmarks`, `history`, `management`, `proxy`, `webRequest`,
 `declarativeNetRequest`, `nativeMessaging`, or clipboard permissions.
 
 Firefox does **not** request `privacy`. Firefox's `BrowserSetting` API has no
-private-session scope, so the extension never mutates global privacy config; it
-reports each hardened protection as "Unavailable in this browser." The private
-window still opens — it simply can't add session-scoped protections on Firefox.
+private-session scope, so the extension never mutates global privacy config. The
+Firefox build therefore offers no Hardened Private Mode at all — it only opens
+private windows, one click from the toolbar.
 
 > The Chromium build (which does use `privacy`, scoped to
 > `incognito_session_only`) ships from a separate repository:
@@ -27,18 +27,19 @@ window still opens — it simply can't add session-scoped protections on Firefox
 
 ## Reviewer note — why `storage` is required
 
-- **`storage`** — The only data stored is the user's own preferences (the three
-  advanced Hardened Mode toggles). Total size is well under 1 KB. No browsing
-  history, URLs, queries, page content, cookies, or identifiers are ever stored.
-  Nothing is transmitted.
+- **`storage`** — The only data stored is a single `onboardingShown` boolean so
+  the one-time welcome page doesn't re-open. Total size is a few bytes. No
+  settings, browsing history, URLs, queries, page content, cookies, or
+  identifiers are ever stored. Nothing is transmitted.
 
-## What Hardened Private Mode never touches
+## What this build never changes
 
-Security protections are explicitly out of scope and are never read or written:
-Safe Browsing, phishing/malware protection, certificate validation, HTTPS
-protections, browser-update checks, download scanning, password-manager
-protections, and autofill. On Firefox, hardened protections are reported
-"Unavailable" rather than applied, so global Firefox settings are never changed.
+The Firefox build changes no browser settings at all — it only opens private
+windows. Security protections are never read or written: Safe Browsing,
+phishing/malware protection, certificate validation, HTTPS protections,
+browser-update checks, download scanning, password-manager protections, and
+autofill. (The Chromium build's Hardened Mode also leaves all of these
+untouched.)
 
 ## No remote code, no network
 

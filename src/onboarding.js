@@ -27,7 +27,6 @@ const manualFallbackEl = document.getElementById("manual-fallback");
 const urlEl = document.getElementById("settings-url");
 const copyBtn = document.getElementById("copy-url");
 const recheckBtn = document.getElementById("recheck");
-const optionsBtn = document.getElementById("open-options");
 const stepToggleEl = document.getElementById("step-toggle");
 
 openPageBtn.textContent = OPEN_BUTTON_TEXT;
@@ -81,13 +80,5 @@ copyBtn.addEventListener("click", async () => {
 });
 
 recheckBtn.addEventListener("click", refreshPermissionStatus);
-
-optionsBtn.addEventListener("click", () => {
-  if (chrome.runtime.openOptionsPage) {
-    chrome.runtime.openOptionsPage();
-  } else {
-    chrome.tabs.create({ url: chrome.runtime.getURL("options.html") });
-  }
-});
 
 refreshPermissionStatus();
