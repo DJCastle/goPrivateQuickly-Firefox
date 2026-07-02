@@ -3,10 +3,10 @@
 > One-click private windows for Firefox.
 > No tracking. No analytics. No network requests. Open source under MIT.
 >
-> Chromium build (Chrome, Brave, Edge, Arc, Opera, Vivaldi):
+> Chromium build (Chrome, Brave, Edge, Arc, Vivaldi):
 > [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
-![Version](https://img.shields.io/badge/version-1.1.5-blue)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Manifest](https://img.shields.io/badge/manifest-v3-orange)
 ![Privacy](https://img.shields.io/badge/data%20collection-zero-brightgreen)
@@ -50,9 +50,10 @@ those.
 
 ## Install
 
-- **Firefox**: install from Firefox Add-ons. _(Listing pending review.)_
+- **Firefox**: install from
+  [Firefox Add-ons](https://addons.mozilla.org/addon/go-private-quickly/).
 
-Using a Chromium browser (Chrome, Brave, Edge, Arc, Opera, Vivaldi)? It's a
+Using a Chromium browser (Chrome, Brave, Edge, Arc, Vivaldi)? It's a
 separate package —
 [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
@@ -97,11 +98,11 @@ privacy settings.)
 | --- | --- |
 | Firefox (incl. ESR) | 115+ |
 
-Chromium browsers (Chrome, Brave, Edge, Arc, Opera, Vivaldi — 109+) ship from
+Chromium browsers (Chrome, Brave, Edge, Arc, Vivaldi — 109+) ship from
 the [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium)
 repo.
 
-Tested on macOS as of 1.1.5. Should work on Windows and Linux equally
+Tested on macOS as of 1.2.0. Should work on Windows and Linux equally
 — the extension uses only standard, cross-platform `chrome.*` APIs.
 If you find an OS-specific bug, please email support.
 

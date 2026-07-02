@@ -74,5 +74,6 @@ First public release.
   no remote code. Chromium requests `storage` and `privacy`; Firefox requests
   only `storage`. Strict Content Security Policy.
 
+[1.2.0]: https://github.com/DJCastle/goPrivateQuickly-Firefox/releases/tag/gpq-v1.2.0
 [1.1.5]: https://github.com/DJCastle/goPrivateQuickly-Firefox/releases/tag/gpq-v1.1.5
 [1.0.0]: https://github.com/DJCastle/goPrivateQuickly-Firefox/releases/tag/gpq-v1.0.0
