@@ -113,7 +113,7 @@ repo root or [codecraftedapps.com/extensions/license.html](https://codecraftedap
 
 ## Author and support
 
-Built by Don Castle.
+Built by CodeCrafted Apps.
 
 - Website: [codecraftedapps.com/extensions](https://codecraftedapps.com/extensions)
 - Email: [support@codecraftedapps.com](mailto:support@codecraftedapps.com)
