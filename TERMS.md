@@ -137,7 +137,7 @@ it.
 ## Indemnification
 
 To the maximum extent permitted by law, you agree to indemnify and hold
-harmless CodeCraftedApps and Don Castle from any claims, damages,
+harmless CodeCraftedApps and its owner from any claims, damages,
 losses, liabilities, and expenses (including reasonable legal fees)
 arising out of or related to your use or misuse of GPQ, your violation
 of these Terms, or your violation of any law or the rights of any third
