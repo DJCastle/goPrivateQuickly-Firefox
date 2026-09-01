@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // build.mjs — assemble dist/firefox/ from manifest.json + src/.
 //
-// Copies src/ verbatim into dist/firefox/ and drops manifest.json at its root.
+// Copies src/ into dist/firefox/ (minus src/shared/, see below) and drops
+// manifest.json at its root.
 // With --zip, also writes the store-upload bundle dist/firefox.zip (manifest at
 // the zip root, as Firefox Add-ons expects).
 //
@@ -20,6 +21,11 @@ import { deflateRawSync } from "node:zlib";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SRC = join(HERE, "src");
+// src/shared/ is inert scaffolding for a possible future opt-in hardened mode.
+// No shipped file imports it, so it stays out of the package rather than giving
+// an AMO reviewer three JS files that never run. The unit tests import it from
+// src/ directly, so excluding it here doesn't affect them.
+const SHARED = join(SRC, "shared");
 const DIST = join(HERE, "dist");
 const TARGET = "firefox";
 const ZIP = process.argv.includes("--zip");
@@ -28,7 +34,10 @@ async function build() {
   const outDir = join(DIST, TARGET);
   await rm(outDir, { recursive: true, force: true });
   await mkdir(outDir, { recursive: true });
-  await cp(SRC, outDir, { recursive: true });
+  await cp(SRC, outDir, {
+    recursive: true,
+    filter: (from) => from !== SHARED && !from.startsWith(SHARED + sep),
+  });
   await cp(join(HERE, "manifest.json"), join(outDir, "manifest.json"));
   console.log(`Built dist/${TARGET}/`);
 }
