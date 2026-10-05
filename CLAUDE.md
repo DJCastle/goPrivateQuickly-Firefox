@@ -54,8 +54,8 @@ docs/                  reviewer/dev docs (build, permissions, testing, submissio
 README.md PRIVACY.md TERMS.md CHANGELOG.md LICENSE
 ```
 
-`dist/` is build output — gitignored. Internal docs (`CLAUDE.md`,
-`CLAUDE-LOG.md`, `HANDOFF.md`, `ROADMAP.md`) are local-only via
+`dist/` is build output — gitignored. `CLAUDE.md` and `Agentic_Developer.md` are committed.
+`CLAUDE-LOG.md`, `HANDOFF.md` and `ROADMAP.md` are local-only via
 `.git/info/exclude`.
 
 ## Commit & history hygiene
