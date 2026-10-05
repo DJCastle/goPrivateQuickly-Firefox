@@ -5,6 +5,14 @@ All notable changes to this extension are documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Version scheme: [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] — 2026-10-05
+
+### Fixed
+
+- The welcome page described the toolbar icon's colors in reverse. It now
+  says the icon turns to the muted silver mask in private windows and shows
+  full color otherwise.
+
 ## [1.2.0] — 2026-06-28
 
 ### Changed

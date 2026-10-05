@@ -6,7 +6,7 @@
 > Chromium build (Chrome, Brave, Edge, Arc, Vivaldi):
 > [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
-![Version](https://img.shields.io/badge/version-1.2.0-blue)
+![Version](https://img.shields.io/badge/version-1.2.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Manifest](https://img.shields.io/badge/manifest-v3-orange)
 ![Privacy](https://img.shields.io/badge/data%20collection-zero-brightgreen)
