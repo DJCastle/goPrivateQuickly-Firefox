@@ -7,6 +7,10 @@ the Chrome Web Store and has different limits.
 
 ---
 
+## Release notes — 1.2.1
+
+> Fixed the welcome page's description of the toolbar icon: it turns to the muted silver mask in private windows and shows full color otherwise.
+
 ## Add-on name
 
 > Go Private Quickly
@@ -15,9 +19,9 @@ _AMO suggests keeping names under 50 chars. Currently: 22._
 
 ## Summary (short description)
 
-> One click opens a fresh private window, right from your toolbar. Free, open source, and genuinely zero-tracking — no analytics, no network requests, nothing collected. Extra session-only privacy hardening on Chromium browsers.
+> One click opens a fresh private window, right from your toolbar. Free, open source, and genuinely zero-tracking — no analytics, no network requests, nothing collected.
 
-_AMO summary is shown in search results. Max 250 chars._
+_AMO summary is shown in search results. Max 250 chars. Currently: 165._
 
 ## Categories
 
@@ -87,12 +91,10 @@ Questions or problems: support@codecraftedapps.com
 
 ## Screenshots (up to 10; AMO recommends at least 4)
 
-Screenshots must be recaptured for this build — the existing `firefox-1.png`,
-`firefox-2.png`, and `firefox-3.png` show the popup and Hardened Mode panel,
-which no longer exist. Suggested captures: the GPQ toolbar icon with a freshly
-opened private window, the onboarding/welcome page, and the toolbar icon's
-private-vs-normal state. AMO accepts native size as-is and displays it scaled —
-no resizing needed.
+Upload the three files in this folder. They show the 1.2.1 UI: the toolbar
+icon in a normal and a private window, and the welcome page with the corrected
+icon wording. AMO accepts native size as-is and displays it scaled — no
+resizing needed.
 
 ## Notes for AMO reviewers (paste into "Notes to reviewer" field)
 
@@ -123,17 +125,18 @@ NETWORK
 The extension makes ZERO network requests. There is no `fetch`,
 `XMLHttpRequest`, WebSocket, EventSource, image beacon, external
 font, CDN, or third-party SDK in the package. You can verify this in
-the source files under src/ — the .js files are short, vanilla, and
-self-contained (background and onboarding, plus the src/shared/ modules
-covered by the unit tests).
+the source files under src/ — the shipped .js files are short, vanilla,
+and self-contained: background.js and onboarding.js. src/shared/ is
+test-only scaffolding and is excluded from the package.
 
 OUTBOUND LINKS
 
-The onboarding page footer contains two outbound links:
-- https://codecraftedapps.com/extensions (homepage)
+The onboarding page contains three outbound links:
+- https://codecraftedapps.com/extensions/go-private-quickly/ (twice: the
+  product page)
 - mailto:support@codecraftedapps.com (support email)
 
-Both only activate when the user clicks them.
+All only activate when the user clicks them.
 
 SOURCE
 
@@ -141,7 +144,8 @@ The unminified source matches the submitted package and is publicly
 available at https://github.com/DJCastle/goPrivateQuickly-Firefox
 (extension files at the repo root). The build pipeline is a
 zero-dependency Node script (build.mjs) that drops manifest.json at the
-package root and copies src/ to dist/firefox/.
+package root and copies src/ (minus the test-only src/shared/) to
+dist/firefox/. Nothing is transformed.
 
 If you have questions, please contact
 support@codecraftedapps.com.

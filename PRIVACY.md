@@ -1,13 +1,14 @@
 # Privacy Policy — Go Private Quickly (GPQ)
 
-**Last updated:** June 28, 2026
+**Last updated:** October 5, 2026
 
 ## The short version
 
 Go Private Quickly does not collect, store, transmit, sell, share, or
 otherwise process any personal data. No analytics. No tracking. No
 telemetry. No network requests at all. The only thing it remembers is
-your own settings, and those live exclusively in your browser.
+a single flag saying you've seen the welcome page, and that lives
+exclusively in your browser.
 
 If you're the kind of person who only reads the short version, you're
 done. Thanks for caring about privacy.
@@ -59,11 +60,11 @@ are made.
 
 ## What permissions GPQ requests, and why
 
-On **Firefox**, only one: `"storage"`, to save the settings above.
+On **Firefox**, only one: `"storage"`, to save the welcome-page flag above.
 
 On **Chromium browsers** (Chrome, Edge, Brave, Vivaldi, etc.), two:
 
-- `"storage"` — to save the settings above.
+- `"storage"` — to save your Hardened Mode preferences.
 - `"privacy"` — used **only** by Hardened Private Mode, and **only** to
   apply privacy-hardening to the private session you explicitly open.
   GPQ writes these settings with the browser's *incognito-session-only*
@@ -74,8 +75,8 @@ On **Chromium browsers** (Chrome, Edge, Brave, Vivaldi, etc.), two:
   a protection was applied, already on, unavailable, or blocked by policy or
   another extension — instead of silently failing.
   Firefox does not offer a private-session scope for these settings, so
-  GPQ does not request `privacy` there and reports each protection as
-  unavailable rather than changing your global configuration.
+  the Firefox build does not request `privacy` and offers no Hardened
+  Mode, rather than changing your global configuration.
 
 GPQ does not request, and does not have access to:
 

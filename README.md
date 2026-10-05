@@ -57,7 +57,7 @@ Using a Chromium browser (Chrome, Brave, Edge, Arc, Vivaldi)? It's a
 separate package —
 [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
-In the meantime you can build and load it from source — see
+To build and load it from source instead — see
 [docs/build-instructions.md](docs/build-instructions.md).
 
 ### One quick post-install step
