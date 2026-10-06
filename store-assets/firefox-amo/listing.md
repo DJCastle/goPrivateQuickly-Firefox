@@ -30,7 +30,9 @@ _AMO summary is shown in search results. Max 250 chars. Currently: 165._
 
 ## Tags
 
-> private window, incognito, private browsing, privacy, productivity, one click, no tracking
+> privacy
+
+_AMO now offers only a fixed tag list; "privacy" is the one honest fit ("security" would overstate it)._
 
 ## Description
 
