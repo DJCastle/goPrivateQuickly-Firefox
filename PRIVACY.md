@@ -40,7 +40,7 @@ It lives in `chrome.storage.local`, never leaves your browser, and says
 nothing about what you browse. GPQ has no settings page and stores no
 other preferences.
 
-Chromium versions before 1.2.1 offered an optional Hardened Private Mode and
+Chromium versions before 1.3.0 offered an optional Hardened Private Mode and
 stored three on/off preferences for it. That mode has been removed; GPQ
 no longer reads or writes those preferences.
 

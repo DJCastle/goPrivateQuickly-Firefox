@@ -21,7 +21,7 @@ private-session scope, so the extension never mutates global privacy config. The
 Firefox build therefore offers no Hardened Private Mode at all — it only opens
 private windows, one click from the toolbar.
 
-> The Chromium build (also `storage` only since its 1.2.1 release) ships from
+> The Chromium build (also `storage` only since its 1.3.0 release) ships from
 > a separate repository:
 > [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
@@ -39,7 +39,7 @@ windows. Security protections are never read or written: Safe Browsing,
 phishing/malware protection, certificate validation, HTTPS protections,
 browser-update checks, download scanning, password-manager protections, and
 autofill. (The Chromium build, which dropped its Hardened Mode in
-1.2.1, changes no settings either.)
+1.3.0, changes no settings either.)
 
 ## No remote code, no network
 

@@ -19,7 +19,7 @@ click, straight from your toolbar. That's the whole idea.
 The [Chromium build](https://github.com/DJCastle/goPrivateQuickly-Chromium)
 works the same way: one click, a private window. GPQ changes no browser
 settings on either build. (The Chromium build's optional Hardened Private
-Mode was removed in its 1.2.1 release.)
+Mode was removed in its 1.3.0 release.)
 
 The toolbar icon also reflects whether the currently focused window is
 private — a vivid purple-and-gold mask when you're in a normal window, a
