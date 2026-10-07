@@ -55,8 +55,9 @@ README.md PRIVACY.md TERMS.md CHANGELOG.md LICENSE
 ```
 
 `dist/` is build output — gitignored. `CLAUDE.md` and `Agentic_Developer.md` are committed.
-`CLAUDE-LOG.md`, `HANDOFF.md` and `ROADMAP.md` are local-only via
-`.git/info/exclude`.
+`CLAUDE-LOG.md`, `HANDOFF.md` and `ROADMAP.md` are not kept in this repo. They
+live in the owner's private notes, and a global git ignore blocks them if a copy
+ever lands here.
 
 ## Commit & history hygiene
 
