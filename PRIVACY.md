@@ -1,6 +1,6 @@
 # Privacy Policy — Go Private Quickly (GPQ)
 
-**Last updated:** October 5, 2026
+**Last updated:** October 7, 2026
 
 ## The short version
 
@@ -16,10 +16,10 @@ done. Thanks for caring about privacy.
 ## The slightly longer version
 
 I built Go Private Quickly because I wanted a single-click way to open
-a new private window. That is the entire purpose of the extension. On
-Firefox there are no settings to configure, so the only thing GPQ stores
-is a single flag noting that you've already seen the one-time welcome
-page — nothing about what you browse.
+a new private/incognito window. That is the entire purpose of the
+extension. There are no settings to configure, so the only thing GPQ
+stores is a single flag noting that you've already seen the one-time
+welcome page — nothing about what you browse.
 
 That flag is stored in `chrome.storage.local`. It never leaves your
 device, never leaves your browser, and never reaches me or anyone else.
@@ -37,8 +37,12 @@ Exactly one tiny value, well under one kilobyte:
 | `onboardingShown` | `true` / `false` | Remembers that the one-time welcome page has been shown, so it doesn't re-open. |
 
 It lives in `chrome.storage.local`, never leaves your browser, and says
-nothing about what you browse. The Firefox build has no settings page and
-stores no other preferences.
+nothing about what you browse. GPQ has no settings page and stores no
+other preferences.
+
+Chromium versions before 1.2.1 offered an optional Hardened Private Mode and
+stored three on/off preferences for it. That mode has been removed; GPQ
+no longer reads or writes those preferences.
 
 ## What we transmit
 
@@ -53,30 +57,21 @@ the `storage` permission and no host permissions at all — your
 browser itself won't let it read or transmit page data even if it
 wanted to.
 
-The only "external" links you'll see are in the onboarding page footer —
+The only "external" links you'll see are in the onboarding page —
 links to this website and a `mailto:` link to the support email. Those
 links only do anything when *you* click them. Until then, no requests
 are made.
 
 ## What permissions GPQ requests, and why
 
-On **Firefox**, only one: `"storage"`, to save the welcome-page flag above.
+Only one, on every browser: `"storage"`, to save the welcome-page flag
+above. That's true of the Chromium build (Chrome, Edge, Brave, Arc,
+Vivaldi) and the Firefox build alike.
 
-On **Chromium browsers** (Chrome, Edge, Brave, Vivaldi, etc.), two:
-
-- `"storage"` — to save your Hardened Mode preferences.
-- `"privacy"` — used **only** by Hardened Private Mode, and **only** to
-  apply privacy-hardening to the private session you explicitly open.
-  GPQ writes these settings with the browser's *incognito-session-only*
-  scope, so they affect the private session alone and the browser clears
-  them automatically when the last private window closes. GPQ never
-  changes your normal-browsing privacy settings. The `privacy` permission
-  also lets GPQ read each setting's level of control, so it can tell whether
-  a protection was applied, already on, unavailable, or blocked by policy or
-  another extension — instead of silently failing.
-  Firefox does not offer a private-session scope for these settings, so
-  the Firefox build does not request `privacy` and offers no Hardened
-  Mode, rather than changing your global configuration.
+GPQ changes no browser settings. It does not request the `privacy`
+permission, and it never touches your security protections — Safe
+Browsing, phishing and malware protection, certificate and HTTPS checks,
+browser updates, download scanning, and your password manager.
 
 GPQ does not request, and does not have access to:
 
@@ -88,11 +83,6 @@ GPQ does not request, and does not have access to:
 - Your location, microphone, camera, or any other sensor
 - Any VPN software, installed applications, or other extensions
 - Anything else
-
-GPQ never disables your security protections. Safe Browsing, phishing and
-malware protection, certificate and HTTPS checks, browser updates, download
-scanning, and your password manager are never touched by Hardened Private
-Mode.
 
 ## Third parties
 

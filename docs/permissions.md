@@ -21,8 +21,8 @@ private-session scope, so the extension never mutates global privacy config. The
 Firefox build therefore offers no Hardened Private Mode at all — it only opens
 private windows, one click from the toolbar.
 
-> The Chromium build (which does use `privacy`, scoped to
-> `incognito_session_only`) ships from a separate repository:
+> The Chromium build (also `storage` only since its 1.2.1 release) ships from
+> a separate repository:
 > [goPrivateQuickly-Chromium](https://github.com/DJCastle/goPrivateQuickly-Chromium).
 
 ## Reviewer note — why `storage` is required
@@ -38,8 +38,8 @@ The Firefox build changes no browser settings at all — it only opens private
 windows. Security protections are never read or written: Safe Browsing,
 phishing/malware protection, certificate validation, HTTPS protections,
 browser-update checks, download scanning, password-manager protections, and
-autofill. (The Chromium build's Hardened Mode also leaves all of these
-untouched.)
+autofill. (The Chromium build, which dropped its Hardened Mode in
+1.2.1, changes no settings either.)
 
 ## No remote code, no network
 

@@ -1,6 +1,6 @@
 # Terms of Use — Go Private Quickly (GPQ)
 
-**Last updated:** June 29, 2026
+**Last updated:** October 7, 2026
 
 Hi. Thanks for using Go Private Quickly. This document is the formal
 "please use it responsibly and don't sue me" page. It's written to be
@@ -10,8 +10,8 @@ please give it a once-over.
 ## What this extension is
 
 Go Private Quickly ("GPQ") is a browser extension that opens a new
-private window when you click its toolbar icon. One click, nothing to
-configure. That is all it does.
+private/incognito window when you click its toolbar icon. That is all
+it does.
 
 It's a side project I built for my own use and decided to share. It's
 free, open source under the MIT License, and contains no advertising,

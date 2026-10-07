@@ -46,7 +46,7 @@ I built it because I open private windows all day and wanted it to be one click 
 WHAT YOU GET
 - One click to a new private window, straight from the toolbar.
 - A toolbar icon that quietly shows whether the window you're in is private.
-- Heads up on "Hardened" mode (Chromium only): some browsers let an extension tighten extra privacy settings for just the private session. Firefox doesn't allow that — it has no way to confine those settings to a single private session — so this Firefox build leaves them out entirely rather than changing your normal browsing globally. The session-scoped hardening is available in the Chrome/Brave/Edge build.
+- It changes no browser settings. It opens the window and stays out of the way.
 
 WHAT IT HONESTLY DOES NOT DO (I'd rather set expectations than oversell)
 - It's not a VPN. Your network, ISP, employer, or school can still see the sites you visit.
@@ -112,11 +112,8 @@ PERMISSIONS
 - "incognito": "spanning" — required so the same extension instance
   serves both normal and private windows.
 
-This Firefox build does NOT request the "privacy" permission and offers no
-Hardened Private Mode. Firefox's BrowserSetting API has no private-session
-scope, so the extension never mutates global privacy settings — it only opens
-private windows. (The Chromium build requests "privacy" and applies
-session-scoped hardening with the incognito-session-only scope.)
+This extension does NOT request the "privacy" permission and changes no
+browser settings — it only opens private windows.
 
 No host permissions, no content scripts, no tabs permission, no
 activeTab. The extension does not read, modify, or inject anything

@@ -16,13 +16,10 @@
 Click the toolbar icon and a new private window opens right away. One
 click, straight from your toolbar. That's the whole idea.
 
-Hardened Private Mode (the optional session-scoped privacy tightening) is
-**Chromium-only**: Firefox's `BrowserSetting` API has no private-session
-scope, so those settings could only be changed globally — which would
-alter your normal browsing. GPQ refuses to do that, so the Firefox build
-doesn't offer hardening and never touches your normal settings. The
-session-scoped version ships in the
-[Chromium build](https://github.com/DJCastle/goPrivateQuickly-Chromium).
+The [Chromium build](https://github.com/DJCastle/goPrivateQuickly-Chromium)
+works the same way: one click, a private window. GPQ changes no browser
+settings on either build. (The Chromium build's optional Hardened Private
+Mode was removed in its 1.2.1 release.)
 
 The toolbar icon also reflects whether the currently focused window is
 private — a vivid purple-and-gold mask when you're in a normal window, a
@@ -87,10 +84,8 @@ installed software. Full justification lives in
 
 ## Settings
 
-None. The Firefox build has no settings page — it does one thing, one
-click, with nothing to configure. (The Chromium build adds optional
-Hardened Mode toggles, since that browser supports session-scoped
-privacy settings.)
+None. GPQ has no settings page — it does one thing, one click, with
+nothing to configure.
 
 ## Browser support
 
