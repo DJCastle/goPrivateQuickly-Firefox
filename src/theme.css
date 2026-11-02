@@ -1,5 +1,5 @@
-/* Shared theme tokens and base resets for every in-extension page
-   (popup, options, onboarding). Each page's own CSS layers
+/* Shared theme tokens and base resets for the in-extension pages
+   (currently just onboarding). Each page's own CSS layers
    layout-specific rules on top. */
 
 :root {

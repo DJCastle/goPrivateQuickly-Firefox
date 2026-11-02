@@ -7,7 +7,6 @@ repo. Run the [testing checklist](testing-checklist.md) first.
 
 ## Pre-flight
 
-- [ ] `node --test` passes.
 - [ ] `node build.mjs --zip` produces a clean `dist/firefox/` and
       `dist/firefox.zip`.
 - [ ] Version bumped in `manifest.json`; `CHANGELOG.md` updated; git tag

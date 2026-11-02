@@ -9,8 +9,7 @@ from sources rather than uploaded as hand-written files — this is that.
 `build.mjs` is a short Node script using only Node built-ins (`node:fs`,
 `node:path`, `node:url`, `node:zlib`). It does one thing:
 
-1. Copies `src/` into `dist/firefox/`, except `src/shared/` (test-only
-   scaffolding that isn't shipped), and drops the repo-root `manifest.json`
+1. Copies `src/` into `dist/firefox/` and drops the repo-root `manifest.json`
    at `dist/firefox/manifest.json`.
 
 There is **no transpilation, bundling, minification, or obfuscation**. The
@@ -39,21 +38,10 @@ Output:
 ## Verifying the source matches the package
 
 Every file in the uploaded package exists unchanged under `src/`, plus the
-repo-root `manifest.json`. Reviewers can diff `dist/firefox/` against `src/`
-(ignoring `src/shared/`, which isn't packaged) + `manifest.json` to confirm;
-nothing is transformed.
-
-## Tests
-
-```bash
-node --test
-```
-
-Runs the zero-dependency unit tests in `test/`. They cover the scaffolding in
-`src/shared/` (hardened-setting builder, Firefox privacy adapter), which is
-not part of the shipped package.
+repo-root `manifest.json`. Reviewers can diff `dist/firefox/` against `src/` +
+`manifest.json` to confirm; nothing is transformed.
 
 ## Source of truth
 
-All source is in this repository: `src/`, `manifest.json`, `build.mjs`,
-`test/`. There is no external or remotely hosted code.
+All source is in this repository: `src/`, `manifest.json`, `build.mjs`.
+There is no external or remotely hosted code.

@@ -7,10 +7,9 @@ Shared craft rules — imported so every surface loads them, including Xcode's s
 ## Stack & purpose
 
 Standalone **Firefox** build of Go Private Quickly (GPQ): one click on the
-toolbar icon opens a new private window. No popup, no settings page — Hardened
-Private Mode is Chromium-only (Firefox can't confine privacy settings to a
-private session), so that subsystem ships only as inert scaffolding + tests
-here. Manifest V3, vanilla JS only — no bundler, no framework, no TypeScript.
+toolbar icon opens a new private window. No popup, no settings page, and no
+Hardened Private Mode (removed here in 1.2.0, and from Chromium in its 1.3.0).
+Manifest V3, vanilla JS only — no bundler, no framework, no TypeScript.
 The Chromium build is a separate repo (`goPrivateQuickly-Chromium`); the public
 website lives in `codeCraftedApps` at `codecraftedapps.com/extensions/`.
 
@@ -27,13 +26,11 @@ website lives in `codeCraftedApps` at `codecraftedapps.com/extensions/`.
   straight from `chrome.action.onClicked` in `background.js` — no `default_popup`,
   no `options_ui`. The handler checks `isAllowedIncognitoAccess()` first and opens
   onboarding if not granted (Firefox requires private-window access to open one
-  programmatically, so this avoids a silent dead click). The popup + options +
-  `prefs.js` were deleted; `firefoxAdapter`/`hardenedDefaults`/`sessionManager`
-  stay as scaffolding for a possible future opt-in mode and are covered by tests.
+  programmatically, so this avoids a silent dead click). The popup, options and
+  the Hardened-mode scaffolding (`src/shared/`, its tests) are all deleted.
 - **No `privacy` permission.** Firefox's `BrowserSetting` API has no
   private-session scope. Hardening that can't be confined to the private session
-  would mutate global config, which GPQ refuses to do — so `firefoxAdapter`
-  reports every protection as "unavailable". The private window still opens.
+  would mutate global config, which GPQ refuses to do — so it offers none.
 - `manifest.json` carries `browser_specific_settings.gecko`
   (id `go-private-quickly@codecraftedapps.com`, `strict_min_version` 115.0,
   `data_collection_permissions.required: ["none"]`), `incognito: "spanning"`,
@@ -47,7 +44,6 @@ website lives in `codeCraftedApps` at `codecraftedapps.com/extensions/`.
 manifest.json          the manifest (no base/overlay split anymore)
 src/                   all source (Firefox adapter only)
 build.mjs              zero-dep Node build → dist/firefox/ (+ dist/firefox.zip with --zip)
-test/                  node --test unit tests
 tools/                 icon generator + sources
 store-assets/firefox-amo/
 docs/                  reviewer/dev docs (build, permissions, testing, submission)
@@ -103,9 +99,10 @@ ever lands here.
   GPQ's only function can't exist there. Omitting `gecko_android` from
   `browser_specific_settings` is the correct manifest state and keeps AMO
   desktop-only. Don't revisit on Android-extension news.
-- **`src/shared/` is not shipped.** `build.mjs` filters it out of `dist/`. It's
-  inert scaffolding no shipped file imports; the tests import it from `src/`
-  directly. Don't "fix" the build by copying `src/` wholesale again.
+- **No unit tests.** The Hardened scaffolding was the only tested code and was
+  deleted. CI (`.github/workflows/test.yml`) checks the build only.
+  If tests come back, extract the click path into a module first (as Chromium's
+  `launch.js`) so it can be driven without loading the event listeners.
 
 ## Cross-repo sync
 

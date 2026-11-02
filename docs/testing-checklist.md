@@ -1,17 +1,7 @@
 # Testing Checklist — Go Private Quickly (Firefox)
 
-Manual checklist plus the automated suite. Run before every store submission.
-
-## Automated tests
-
-```
-# from the repo root
-node --test
-```
-
-Covers the declarative setting builder and the Firefox adapter decision logic
-(every protection reported "unavailable"). Browser-integration behavior is
-manual.
+Manual checklist. Run before every store submission. (There is no automated
+suite; CI checks that the package builds.)
 
 ## Build
 

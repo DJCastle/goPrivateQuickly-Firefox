@@ -125,8 +125,7 @@ The extension makes ZERO network requests. There is no `fetch`,
 `XMLHttpRequest`, WebSocket, EventSource, image beacon, external
 font, CDN, or third-party SDK in the package. You can verify this in
 the source files under src/ — the shipped .js files are short, vanilla,
-and self-contained: background.js and onboarding.js. src/shared/ is
-test-only scaffolding and is excluded from the package.
+and self-contained: background.js and onboarding.js.
 
 OUTBOUND LINKS
 
@@ -143,8 +142,7 @@ The unminified source matches the submitted package and is publicly
 available at https://github.com/DJCastle/goPrivateQuickly-Firefox
 (extension files at the repo root). The build pipeline is a
 zero-dependency Node script (build.mjs) that drops manifest.json at the
-package root and copies src/ (minus the test-only src/shared/) to
-dist/firefox/. Nothing is transformed.
+package root and copies src/ to dist/firefox/. Nothing is transformed.
 
 If you have questions, please contact
 support@codecraftedapps.com.
