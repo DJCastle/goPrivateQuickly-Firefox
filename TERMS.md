@@ -10,8 +10,9 @@ please give it a once-over.
 ## What this extension is
 
 Go Private Quickly ("GPQ") is a browser extension that opens a new
-private/incognito window when you click its toolbar icon. That is all
-it does.
+private/incognito window when you click its toolbar icon. It works the
+same way on every supported browser and never changes any browser
+settings. That is all it does.
 
 It's a side project I built for my own use and decided to share. It's
 free, open source under the MIT License, and contains no advertising,
@@ -43,8 +44,8 @@ local data is discarded.
   filters that act at the network level.
 
 GPQ is a *convenience* tool — it gets you into private mode faster.
-It does not change what private mode is or expand its protections.
-Please use private mode (and any extension that helps you reach it)
+It does not change what private mode is, and it does not make you
+anonymous. Please use private mode (and any extension that helps you reach it)
 with realistic expectations about what it does.
 
 ## Use it responsibly
@@ -60,9 +61,10 @@ By using GPQ, you agree:
   visit. Don't use this extension (or private browsing in general) to
   commit fraud, harassment, copyright infringement, distribution of
   unlawful material, or anything else that violates the law.
-- You are solely responsible for your own browsing activity. The
-  developer is not responsible for what you choose to do in any
-  window — private or otherwise — that this extension helped you open.
+- You are solely responsible for your own browsing activity.
+  CodeCraftedApps and its owner are not responsible for what you choose
+  to do in any window — private or otherwise — that this extension
+  helped you open.
 - You will not attempt to use GPQ to facilitate harm to other people,
   systems, or data.
 
@@ -71,18 +73,18 @@ By using GPQ, you agree:
 GPQ is provided **"as is" and "as available", without warranty of any
 kind, express or implied**, including but not limited to the implied
 warranties of merchantability, fitness for a particular purpose, and
-non-infringement. The developer makes no guarantee that GPQ will be
-error-free, uninterrupted, or compatible with every future version of
-every browser.
+non-infringement. CodeCraftedApps and its owner make no guarantee that
+GPQ will be error-free, uninterrupted, or compatible with every future
+version of every browser.
 
-You install and use GPQ at your own risk. The developer is not
-responsible for any direct, indirect, incidental, special,
+You install and use GPQ at your own risk. CodeCraftedApps and its
+owner are not responsible for any direct, indirect, incidental, special,
 consequential, or exemplary damages — including but not limited to
 lost data, lost browsing sessions, lost productivity, lost revenue,
 or any other loss — arising out of or related to your use of, or
-inability to use, the extension. This applies even if the developer
-has been advised of the possibility of such damages, to the maximum
-extent permitted by applicable law.
+inability to use, the extension. This applies even if CodeCraftedApps
+or its owner has been advised of the possibility of such damages, to
+the maximum extent permitted by applicable law.
 
 If your jurisdiction does not allow the disclaimer or limitation of
 certain warranties or liabilities, those disclaimers and limitations
@@ -96,7 +98,7 @@ You can read it, fork it, adapt it, and build your own version. The
 MIT License is the controlling legal document for the source code
 itself; these Terms of Use govern your use of the *distributed
 extension* (whatever version you install from the Chrome Web Store,
-Firefox AMO, or elsewhere).
+Microsoft Edge Add-ons, Firefox Add-ons, or elsewhere).
 
 ## Maintenance and updates
 
@@ -129,7 +131,7 @@ should not be read as a claim of affiliation.
 ## Changes to these terms
 
 If I have to update these terms, the updated version will live at the
-same URL ([codecraftedapps.com/extensions/go-private-quickly/terms](https://codecraftedapps.com/extensions/go-private-quickly/terms))
+same URL ([codecraftedapps.com/extensions/go-private-quickly/terms.html](https://codecraftedapps.com/extensions/go-private-quickly/terms.html))
 with a new "Last updated" date at the top. If a change is material,
 I'll call it out in the release notes for the version that introduces
 it.

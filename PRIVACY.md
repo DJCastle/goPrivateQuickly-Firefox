@@ -17,18 +17,18 @@ done. Thanks for caring about privacy.
 
 I built Go Private Quickly because I wanted a single-click way to open
 a new private/incognito window. That is the entire purpose of the
-extension. There are no settings to configure, so the only thing GPQ
+extension. GPQ has no settings, on any browser. The only thing it
 stores is a single flag noting that you've already seen the one-time
 welcome page — nothing about what you browse.
 
 That flag is stored in `chrome.storage.local`. It never leaves your
 device, never leaves your browser, and never reaches me or anyone else.
 
-## What we collect
+## What GPQ collects
 
 Nothing.
 
-## What we store on your device
+## What GPQ stores on your device
 
 Exactly one tiny value, well under one kilobyte:
 
@@ -36,15 +36,11 @@ Exactly one tiny value, well under one kilobyte:
 | --- | --- | --- |
 | `onboardingShown` | `true` / `false` | Remembers that the one-time welcome page has been shown, so it doesn't re-open. |
 
-It lives in `chrome.storage.local`, never leaves your browser, and says
-nothing about what you browse. GPQ has no settings page and stores no
-other preferences.
+It lives in `chrome.storage.local`, never leaves your browser, is not
+synced, and says nothing about what you browse. It is the same on every
+browser: GPQ has no settings page and stores no other preferences.
 
-Chromium versions before 1.3.0 offered an optional Hardened Private Mode and
-stored three on/off preferences for it. That mode has been removed; GPQ
-no longer reads or writes those preferences.
-
-## What we transmit
+## What GPQ transmits
 
 Nothing. There are no network requests in the extension's code. No
 `fetch`, no `XMLHttpRequest`, no WebSocket, no image beacons, no
@@ -64,14 +60,15 @@ are made.
 
 ## What permissions GPQ requests, and why
 
-Only one, on every browser: `"storage"`, to save the welcome-page flag
-above. That's true of the Chromium build (Chrome, Edge, Brave, Arc,
-Vivaldi) and the Firefox build alike.
+Only one, on every browser — Firefox and the Chromium browsers (Chrome,
+Edge, Brave, Arc, Vivaldi, etc.) alike: `"storage"`, used for the
+single local first-run flag above. GPQ has no options page and syncs
+nothing.
 
-GPQ changes no browser settings. It does not request the `privacy`
-permission, and it never touches your security protections — Safe
-Browsing, phishing and malware protection, certificate and HTTPS checks,
-browser updates, download scanning, and your password manager.
+GPQ never changes any browser settings, so your security protections —
+Safe Browsing, phishing and malware protection, certificate and HTTPS
+checks, browser updates, download scanning, and your password manager —
+are never touched.
 
 GPQ does not request, and does not have access to:
 
@@ -99,7 +96,7 @@ enough to use a web browser.
 ## Changes to this policy
 
 If this policy ever changes, the updated version will live at the same
-URL ([codecraftedapps.com/extensions/go-private-quickly/privacy](https://codecraftedapps.com/extensions/go-private-quickly/privacy.html))
+URL ([codecraftedapps.com/extensions/go-private-quickly/privacy.html](https://codecraftedapps.com/extensions/go-private-quickly/privacy.html))
 with a new "Last updated" date at the top. Material changes will be
 called out in the changelog of any release that introduces them.
 
